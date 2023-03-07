@@ -1,91 +1,76 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import Image from "next/image";
+import profilePic from "../public/profile.webp";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="p-8 md:py-20 font-sans font-light md:text-lg text-gray-900 dark:text-gray-100 transition-colors duration-500 ease-linear mx-auto">
+      <div className="max-w-3xl w-full sm:flex mx-auto bg-gray-100 dark:bg-gray-800 shadow-xl mb-16 items-stretch rounded-lg">
+        <div className="bg-gray-200 dark:bg-gray-700 px-6 py-4 md:py-6 md:px-8 flex items-center justify-center rounded-t-lg md:rounded-r-none md:rounded-l-lg">
+          <Image
+            className="rounded-full border-2 dark:border-gray-300 w-32 h-32 md:w-40 md:h-40"
+            src={profilePic}
+            alt="Marco"
+            priority
+          />
+        </div>
+        <div className="py-6 px-6 md:px-8 md:flex-1md:text-lg flex flex-col">
+          <div>
+            <h1 className="text-xl md:text-2xl font-semibold leading-8">
+              Marco Singhof
+            </h1>
+            <div className="text-base font-normal text-blue-700 dark:text-green-500">
+              Full-stack developer
+            </div>
+            <div className="text-base font-normal text-gray-700 dark:text-gray-300">
+              Munich, Germany
+            </div>
+          </div>
+          <div className="mt-auto">
+            <a
+              className="transition-colors duration-200 bg-blue-600 dark:bg-green-700 hover:bg-blue-700 dark:hover:bg-green-600 hover:text-white text-white shadow-lg p-2 px-4 rounded inline-block mt-2"
+              href="mailto:coffee@singhof.dev"
+            >
+              Contact me
+            </a>
+          </div>
         </div>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
+      <div className="max-w-3xl w-full mx-auto bg-gray-100 dark:bg-gray-700 shadow-xl mb-16 rounded-lg">
+        <div className="bg-gray-200 dark:bg-gray-800 py-2 px-6 md:px-8 rounded-t-lg">
+          <h2 className="font-semibold text-xl md:text-2xl">Who am I?</h2>
+        </div>
+        <div className="py-6 px-6 md:px-8 spaced">
+          <p className="mb-6">
+            I&apos;m{" "}
+            <a
+              href="https://twitter.com/marcosinghof"
+              className="text-blue-700 dark:text-green-500 hover:text-blue-900 dark:hover:text-green-500"
+            >
+              @marcosinghof
+            </a>
+            , a full-stack developer who loves to create things for the web.
+          </p>
+          <p className="mb-6">
+            In 2013, I created one of the most popular tweaks for the iOS
+            jailbreak called{" "}
+            <a
+              className="text-blue-700 dark:text-green-500 hover:text-blue-900 dark:hover:text-green-500"
+              href="https://www.idownloadblog.com/2013/12/30/noslowanimations-ios-7/"
+            >
+              NoSlowAnimations
+            </a>
+            .
+          </p>
+          <p>
+            Currently, I&apos;m building beautiful web experiences
+            using Laravel &amp; Next.js, and I study Computer Science at the Ludwig
+            Maximilian University of Munich.
+          </p>
         </div>
       </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <footer className="text-center text-gray-800 dark:text-gray-400 text-base">
+        &copy; {new Date().getFullYear()} Marco Singhof
+      </footer>
     </main>
-  )
+  );
 }
